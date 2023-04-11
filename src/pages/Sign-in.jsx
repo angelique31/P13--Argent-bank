@@ -9,7 +9,6 @@ function SignIn() {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-  // const userProfile = useSelector((state) => state.user.profile);
   const error = useSelector((state) => state.user.error);
 
   const handleEmailChange = (event) => {

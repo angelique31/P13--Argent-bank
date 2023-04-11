@@ -3,7 +3,12 @@ import Logout from "../components/LogOut";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUserProfile } from "../store/userSlice";
 import EditableName from "../components/EditableName";
+import styled from "styled-components";
 import "../css/main.css";
+
+const Name = styled.span`
+  font-size: 1.5rem;
+`;
 
 const ProfilePage = () => {
   const profile = useSelector((state) => state.user.profile);
@@ -58,7 +63,7 @@ const ProfilePage = () => {
       <main className="main bg-dark">
         <div className="header">
           <h1>
-            Welcome back
+            Welcome back <br /> <Name>{displayName}</Name>
             <br />
             {profile && (
               <EditableName
