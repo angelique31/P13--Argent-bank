@@ -19,9 +19,12 @@ body {
 
 .bg-dark {
   background-color: #e0e6ed;
+  padding: 30px;
 }
 
-
+.profile-title{
+  color: black;
+}
 .sr-only {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
@@ -36,6 +39,10 @@ body {
   white-space: nowrap !important; /* 3 */
 }
 
+.nav-item{
+  display: flex;
+}
+
 .main-nav {
   display: flex;
   justify-content: space-between;
@@ -46,6 +53,9 @@ body {
 .main-nav a {
   font-weight: bold;
   color: #2c3e50;
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 
 .main-nav a.router-link-exact-active {
@@ -164,6 +174,13 @@ body {
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out 0s;
+}
+
+.sign-in-button:hover{
+  color: black;
+  transform: scale(1.03);
 }
 
 .sign-in-content {
@@ -176,7 +193,7 @@ body {
 }
 
 .sign-in-icon {
-  font-size: 5rem;
+  font-size: 3rem;
 }
 
 .input-remember {
@@ -185,6 +202,10 @@ body {
 
 .input-remember label {
   margin-left: 0.25rem;
+}
+.error-message{
+  color: red;
+  font-weight: 600;
 }
 
 .input-wrapper {
@@ -258,6 +279,13 @@ body {
   color: #fff;
   font-weight: bold;
   padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out 0s;
+}
+
+.edit-button:hover{
+  color: black;
+  transform: scale(1.03);
 }
 
 .header {

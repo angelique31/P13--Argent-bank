@@ -10,15 +10,46 @@ const ApiService = {
           password: password,
         }
       );
-      // console.log(response);
       const jwtToken = response.data.body.token;
-      console.log("JWT Token:", jwtToken);
-
       return jwtToken;
     } catch (error) {
       console.error("Error logging in:", error);
+
+      if (error.response) {
+        const errorCode = error.response.status;
+
+        if (errorCode === 400) {
+          console.error("Invalid fields or bad request.");
+          // Afficher un message d'erreur à l'utilisateur
+        } else if (errorCode === 500) {
+          console.error("Internal server error.");
+          // Afficher un message d'erreur à l'utilisateur
+        }
+      }
     }
   },
+
+  // signupUser: async (email, password, firstName, lastName) => {
+  //   try {
+  //     const response = await axios.post(
+  //       "http://localhost:3001/api/v1/user/signup", // Assurez-vous que l'URL correspond à l'URL de l'API d'inscription
+  //       {
+  //         email: email,
+  //         password: password,
+  //         firstName: firstName,
+  //         lastName: lastName,
+  //       }
+  //     );
+  //     console.log(response);
+  //     if (response.status !== 200) {
+  //       throw new Error("Erreur lors de l'inscription.");
+  //     }
+  //     return response.data.body;
+  //   } catch (error) {
+  //     console.error("Error signing up:", error);
+  //     // Gérer les erreurs 400 et 500 ici, si nécessaire
+  //   }
+  // },
 
   getUserProfile: async (jwtToken) => {
     try {
@@ -31,10 +62,48 @@ const ApiService = {
           },
         }
       );
+      // console.log(response);
+      return {
+        status: response.data.status,
+        message: response.data.message,
+        body: response.data.body,
+      };
+    } catch (error) {
+      console.error("Error logging in:", error);
+
+      if (error.response) {
+        const errorCode = error.response.status;
+
+        if (errorCode === 400) {
+          console.error("Invalid fields or bad request.");
+          // Afficher un message d'erreur à l'utilisateur
+        } else if (errorCode === 500) {
+          console.error("Internal server error.");
+          // Afficher un message d'erreur à l'utilisateur
+        }
+      }
+    }
+  },
+
+  updateUserProfile: async (jwtToken, updatedProfile) => {
+    try {
+      const response = await axios.put(
+        "http://localhost:3001/api/v1/user/profile",
+        updatedProfile,
+        {
+          headers: {
+            Authorization: `Bearer ${jwtToken}`,
+          },
+        }
+      );
       console.log(response);
+      if (response.status !== 200) {
+        throw new Error("Erreur lors de la mise à jour du profil.");
+      }
+
       return response.data.body;
     } catch (error) {
-      console.error("Error getting user profile:", error);
+      console.error("Error updating user profile:", error);
     }
   },
 };

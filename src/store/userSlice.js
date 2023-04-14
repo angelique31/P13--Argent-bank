@@ -17,6 +17,18 @@ export const fetchUserProfile = createAsyncThunk(
   }
 );
 
+export const updateUserProfile = createAsyncThunk(
+  "user/updateUserProfile",
+  async ({ token, updatedProfile }, { rejectWithValue }) => {
+    try {
+      const data = await ApiService.updateUserProfile(token, updatedProfile);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 const userSlice = createSlice({
   name: "user",
   initialState: {

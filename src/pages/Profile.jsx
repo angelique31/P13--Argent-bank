@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Logout from "../components/LogOut";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchUserProfile } from "../store/userSlice";
+import { fetchUserProfile, updateUserProfile } from "../store/userSlice";
 import EditableName from "../components/EditableName";
 import styled from "styled-components";
 import "../css/main.css";
@@ -22,9 +23,21 @@ const ProfilePage = () => {
     }
   }, [profile]);
 
-  const handleNameUpdate = (newName) => {
+  const handleNameUpdate = async (newName) => {
+    const jwtToken = localStorage.getItem("jwtToken");
+    const updatedProfile = {
+      firstName: newName.split(" ")[0],
+      lastName: newName.split(" ").slice(1).join(" "),
+    };
+
+    dispatch(updateUserProfile({ token: jwtToken, updatedProfile })); // Appeler l'action updateUserProfile
+
     setDisplayName(newName);
   };
+
+  // const handleNameUpdate = (newName) => {
+  //   setDisplayName(newName);
+  // };
 
   const handleNameCancel = () => {};
 
@@ -43,15 +56,15 @@ const ProfilePage = () => {
   return (
     <>
       <nav className="main-nav">
-        <a className="main-nav-logo" href="./index.html">
+        <Link to="/" className="main-nav-logo">
           <img
             className="main-nav-logo-image"
             src="./assets/img/argentBankLogo.png"
             alt="Argent Bank Logo"
           />
           <h1 className="sr-only">Argent Bank</h1>
-        </a>
-        <div>
+        </Link>
+        <div className="nav-item">
           <a className="main-nav-item" href="./user.html">
             <i className="fa fa-user-circle"></i>
             {displayName}
@@ -62,7 +75,7 @@ const ProfilePage = () => {
       {error && <p className="error-message">Error: {error}</p>}
       <main className="main bg-dark">
         <div className="header">
-          <h1>
+          <h1 className="profile-title">
             Welcome back <br /> <Name>{displayName}</Name>
             <br />
             {profile && (

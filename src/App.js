@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
-import SignIn from "./pages/Sign-in";
+import SignIn from "./pages/SignIn";
 import ProfilePage from "./pages/Profile";
 
 const App = () => {
