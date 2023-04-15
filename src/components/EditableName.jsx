@@ -71,7 +71,6 @@ const EditableName = ({ fullName, onSave, onCancel }) => {
   if (!editing) {
     return (
       <div className="header">
-        {/* <span>{fullName}</span> */}
         <button className="edit-button" onClick={() => setEditing(true)}>
           Edit Name
         </button>

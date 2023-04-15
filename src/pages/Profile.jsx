@@ -6,6 +6,7 @@ import { fetchUserProfile, updateUserProfile } from "../store/userSlice";
 import EditableName from "../components/EditableName";
 import styled from "styled-components";
 import "../css/main.css";
+import Footer from "../components/Footer";
 
 const Name = styled.span`
   font-size: 1.5rem;
@@ -119,9 +120,7 @@ const ProfilePage = () => {
           </div>
         </section>
       </main>
-      <footer className="footer">
-        <p className="footer-text">Copyright 2020 Argent Bank</p>
-      </footer>
+      <Footer />
     </>
   );
 };

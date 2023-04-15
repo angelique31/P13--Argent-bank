@@ -1,8 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser, fetchUserProfile } from "../store/userSlice";
 
 import React from "react";
+import Footer from "../components/Footer";
+import Navbar from "../components/NavBar";
 
 function SignIn() {
   const [email, setEmail] = React.useState("");
@@ -48,7 +50,7 @@ function SignIn() {
     // Vérifier si l'email entré est autorisé
     if (!allowedEmails.includes(email)) {
       // console.error("Email non autorisé");
-      setCustomError("Cet email n'est pas autorisé");
+      setCustomError("This email is not allowed");
       return;
     }
 
@@ -62,12 +64,12 @@ function SignIn() {
         localStorage.setItem("rememberMe", true);
         localStorage.setItem("email", email);
         localStorage.setItem("password", password);
-        console.log("Remember me is checked, email saved:", email);
+        // console.log("Remember me is checked, email saved:", email);
       } else {
         localStorage.removeItem("rememberMe");
         localStorage.removeItem("email");
         localStorage.removeItem("password");
-        console.log("Remember me is not checked, email not saved");
+        // console.log("Remember me is not checked, email not saved");
       }
     } catch (error) {
       console.error(error);
@@ -76,24 +78,7 @@ function SignIn() {
 
   return (
     <>
-      <nav className="main-nav">
-        <Link to="/" className="main-nav-logo">
-          <img
-            className="main-nav-logo-image"
-            src="./assets/img/argentBankLogo.png"
-            alt="Argent Bank Logo"
-          />
-          <h1 className="sr-only">Argent Bank</h1>
-        </Link>
-        <div>
-          {/* <a className="main-nav-item" href="./sign-in.html"> */}
-          <Link to="/login" className="main-nav-item">
-            <i className="fa fa-user-circle"></i>
-            Sign In
-            {/* </a> */}
-          </Link>
-        </div>
-      </nav>
+      <Navbar />
       <main className="main bg-dark">
         <section className="sign-in-content">
           <i className="fa fa-user-circle sign-in-icon"></i>
@@ -138,10 +123,7 @@ function SignIn() {
           </form>
         </section>
       </main>
-
-      <footer className="footer">
-        <p className="footer-text">Copyright 2023 Argent Bank</p>
-      </footer>
+      <Footer />
     </>
   );
 }

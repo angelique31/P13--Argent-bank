@@ -23,33 +23,10 @@ const ApiService = {
           // Afficher un message d'erreur à l'utilisateur
         } else if (errorCode === 500) {
           console.error("Internal server error.");
-          // Afficher un message d'erreur à l'utilisateur
         }
       }
     }
   },
-
-  // signupUser: async (email, password, firstName, lastName) => {
-  //   try {
-  //     const response = await axios.post(
-  //       "http://localhost:3001/api/v1/user/signup", // Assurez-vous que l'URL correspond à l'URL de l'API d'inscription
-  //       {
-  //         email: email,
-  //         password: password,
-  //         firstName: firstName,
-  //         lastName: lastName,
-  //       }
-  //     );
-  //     console.log(response);
-  //     if (response.status !== 200) {
-  //       throw new Error("Erreur lors de l'inscription.");
-  //     }
-  //     return response.data.body;
-  //   } catch (error) {
-  //     console.error("Error signing up:", error);
-  //     // Gérer les erreurs 400 et 500 ici, si nécessaire
-  //   }
-  // },
 
   getUserProfile: async (jwtToken) => {
     try {

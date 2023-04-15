@@ -111,7 +111,7 @@ body {
   font-size: 0.9rem;
 }
 
-@media (min-width: 920px) {
+@media (min-width: 520px) {
   .hero {
     height: 400px;
     background-position: 0% 33%;
@@ -122,17 +122,20 @@ body {
     top: 50px;
     right: 50px;
     width: 300px;
-    margin: 2rem;
+    /* margin: 2rem; */
   }
 
   .hero-content .subtitle {
     font-size: 1.5rem;
+    
   }
 
   .hero-content .text {
     font-size: 1.2rem;
   }
 }
+
+
 
 .features {
   display: flex;
