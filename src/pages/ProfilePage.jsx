@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import Logout from "../components/LogOut";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUserProfile, updateUserProfile } from "../store/userSlice";
 import EditableName from "../components/EditableName";
 import styled from "styled-components";
 import "../css/main.css";
 import Footer from "../components/Footer";
+import Navbar from "../components/NavBar";
+import Account from "../components/Account";
+import accountData from "../data/accounData";
 
 const Name = styled.span`
   font-size: 1.5rem;
@@ -36,10 +37,6 @@ const ProfilePage = () => {
     setDisplayName(newName);
   };
 
-  // const handleNameUpdate = (newName) => {
-  //   setDisplayName(newName);
-  // };
-
   const handleNameCancel = () => {};
 
   useEffect(() => {
@@ -56,23 +53,7 @@ const ProfilePage = () => {
 
   return (
     <>
-      <nav className="main-nav">
-        <Link to="/" className="main-nav-logo">
-          <img
-            className="main-nav-logo-image"
-            src="./assets/img/argentBankLogo.png"
-            alt="Argent Bank Logo"
-          />
-          <h1 className="sr-only">Argent Bank</h1>
-        </Link>
-        <div className="nav-item">
-          <a className="main-nav-item" href="./user.html">
-            <i className="fa fa-user-circle"></i>
-            {displayName}
-          </a>
-          <Logout />
-        </div>
-      </nav>
+      <Navbar showLogout={true} displayName={displayName} />
       {error && <p className="error-message">Error: {error}</p>}
       <main className="main bg-dark">
         <div className="header">
@@ -89,36 +70,16 @@ const ProfilePage = () => {
           </h1>
         </div>
         <h2 className="sr-only">Accounts</h2>
-        <section className="account">
-          <div className="account-content-wrapper">
-            <h3 className="account-title">Argent Bank Checking (x8349)</h3>
-            <p className="account-amount">$2,082.79</p>
-            <p className="account-amount-description">Available Balance</p>
-          </div>
-          <div className="account-content-wrapper cta">
-            <button className="transaction-button">View transactions</button>
-          </div>
-        </section>
-        <section className="account">
-          <div className="account-content-wrapper">
-            <h3 className="account-title">Argent Bank Savings (x6712)</h3>
-            <p className="account-amount">$10,928.42</p>
-            <p className="account-amount-description">Available Balance</p>
-          </div>
-          <div className="account-content-wrapper cta">
-            <button className="transaction-button">View transactions</button>
-          </div>
-        </section>
-        <section className="account">
-          <div className="account-content-wrapper">
-            <h3 className="account-title">Argent Bank Credit Card (x8349)</h3>
-            <p className="account-amount">$184.30</p>
-            <p className="account-amount-description">Current Balance</p>
-          </div>
-          <div className="account-content-wrapper cta">
-            <button className="transaction-button">View transactions</button>
-          </div>
-        </section>
+        {accountData.map((account) => (
+          <Account
+            // concatène le titre et le numéro de compte, pour obtenir une clé unique pour chaque élément, même si les numéros de compte sont identiques
+            key={`${account.title}-${account.accountNumber}`}
+            title={account.title}
+            accountNumber={account.accountNumber}
+            amount={account.amount}
+            description={account.description}
+          />
+        ))}
       </main>
       <Footer />
     </>

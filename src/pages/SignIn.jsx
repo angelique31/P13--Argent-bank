@@ -28,7 +28,7 @@ function SignIn() {
 
   const handleRememberMeChange = (event) => {
     setRememberMe(event.target.checked);
-    console.log("Remember me changed:", event.target.checked);
+    // console.log("Remember me changed:", event.target.checked);
   };
 
   React.useEffect(() => {

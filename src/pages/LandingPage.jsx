@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 import FeatureItems from "../components/FeatureComponents/FeatureItems";
-import HeroSection from "../components/HeroSection";
+import HeroSection from "../components/FeatureComponents/HeroSection";
 
 const LandingPage = () => {
   return (
