@@ -5,6 +5,73 @@ import { loginUser, fetchUserProfile } from "../store/userSlice";
 import React from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/NavBar";
+import styled from "styled-components";
+
+const Main = styled.main`
+  background-color: #e0e6ed;
+  padding: 30px;
+  flex: 1;
+`;
+
+const SignInContent = styled.section`
+  box-sizing: border-box;
+  background-color: white;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 2rem;
+`;
+
+const Icon = styled.i`
+  font-size: 3rem;
+`;
+
+const InputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 1rem;
+`;
+
+const Label = styled.label`
+  font-weight: bold;
+`;
+
+const Input = styled.input`
+  padding: 5px;
+  font-size: 1.2rem;
+`;
+
+const RememberMe = styled.div`
+  display: flex;
+`;
+
+const RememberMeLabel = styled(Label)`
+  margin-left: 0.25rem;
+`;
+
+const ErrorMessage = styled.p`
+  color: red;
+  font-weight: 600;
+`;
+
+const SignInButton = styled.button`
+  display: block;
+  width: 100%;
+  padding: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out 0s;
+  &:hover {
+    color: black;
+    transform: scale(1.03);
+  }
+`;
 
 function SignIn() {
   const [email, setEmail] = React.useState("");
@@ -79,14 +146,14 @@ function SignIn() {
   return (
     <>
       <Navbar />
-      <main className="main bg-dark">
-        <section className="sign-in-content">
-          <i className="fa fa-user-circle sign-in-icon"></i>
+      <Main>
+        <SignInContent>
+          <Icon className="fa fa-user-circle sign-in-icon"></Icon>
           <h1>Sign In</h1>
           <form onSubmit={handleSubmit}>
-            <div className="input-wrapper">
-              <label htmlFor="email">Email</label>
-              <input
+            <InputWrapper>
+              <Label htmlFor="email">Email</Label>
+              <Input
                 type="email"
                 id="email"
                 name="unique-email"
@@ -94,10 +161,11 @@ function SignIn() {
                 autoComplete="new-email"
                 onChange={handleEmailChange}
               />
-            </div>
-            <div className="input-wrapper">
-              <label htmlFor="password">Password</label>
-              <input
+            </InputWrapper>
+
+            <InputWrapper>
+              <Label htmlFor="password">Password</Label>
+              <Input
                 type="password"
                 id="password"
                 name="unique-password"
@@ -105,24 +173,27 @@ function SignIn() {
                 autoComplete="new-password"
                 onChange={handlePasswordChange}
               />
-            </div>
-            <div className="input-remember">
-              <input
+            </InputWrapper>
+            {/* <div className="input-remember"> */}
+            <RememberMe>
+              <Input
                 type="checkbox"
                 id="remember-me"
                 checked={rememberMe}
                 onChange={handleRememberMeChange}
               />
-              <label htmlFor="remember-me">Remember me</label>
-            </div>
-            {customError && <p className="error-message">{customError}</p>}
-            <button className="sign-in-button" type="submit">
-              Sign In
-            </button>
+              <RememberMeLabel htmlFor="remember-me">
+                Remember me
+              </RememberMeLabel>
+            </RememberMe>
+            {/* {customError && <p className="error-message">{customError}</p>} */}
+            {customError && <ErrorMessage>{customError}</ErrorMessage>}
+            {/* <button className="sign-in-button" type="submit"> */}
+            <SignInButton type="submit">Sign In</SignInButton>
             {error && <p className="error-message">{error}</p>}
           </form>
-        </section>
-      </main>
+        </SignInContent>
+      </Main>
       <Footer />
     </>
   );

@@ -13,6 +13,11 @@ const Name = styled.span`
   font-size: 1.5rem;
 `;
 
+const MainProfile = styled.main`
+  background-color: #e0e6ed;
+  padding: 30px;
+`;
+
 const ProfilePage = () => {
   const profile = useSelector((state) => state.user.profile);
   const error = useSelector((state) => state.user.error);
@@ -29,7 +34,10 @@ const ProfilePage = () => {
     const jwtToken = localStorage.getItem("jwtToken");
     const updatedProfile = {
       firstName: newName.split(" ")[0],
-      lastName: newName.split(" ").slice(1).join(" "),
+      lastName: newName
+        .split(" ")
+        .slice(1)
+        .join(" "),
     };
 
     dispatch(updateUserProfile({ token: jwtToken, updatedProfile })); // Appeler l'action updateUserProfile
@@ -55,7 +63,8 @@ const ProfilePage = () => {
     <>
       <Navbar showLogout={true} displayName={displayName} />
       {error && <p className="error-message">Error: {error}</p>}
-      <main className="main bg-dark">
+      {/* <main className="main bg-dark"> */}
+      <MainProfile>
         <div className="header">
           <h1 className="profile-title">
             Welcome back <br /> <Name>{displayName}</Name>
@@ -80,7 +89,7 @@ const ProfilePage = () => {
             description={account.description}
           />
         ))}
-      </main>
+      </MainProfile>
       <Footer />
     </>
   );

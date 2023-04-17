@@ -1,4 +1,4 @@
-html {
+/* html {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,35 +11,38 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
+} */
 
-.main {
+/************* background formulaire de connexion ***********************/
+/* .main {
   flex: 1;
 }
 
 .bg-dark {
   background-color: #e0e6ed;
   padding: 30px;
-}
+} */
+/************* Fin background formulaire de connexion **********************/
 
-.profile-title{
+/* .profile-title{
   color: black;
 }
 .sr-only {
   border: 0 !important;
-  clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
-  -webkit-clip-path: inset(50%) !important;
-  clip-path: inset(50%) !important; /* 2 */
-  height: 1px !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  padding: 0 !important;
-  position: absolute !important;
-  width: 1px !important;
-  white-space: nowrap !important; /* 3 */
-}
+  clip: rect(1px, 1px, 1px, 1px); 
+  -webkit-clip-path: inset(50%) ;
+  clip-path: inset(50%) ; 
+  height: 1px ;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0 ;
+  position: absolute;
+  width: 1px ;
+  white-space: nowrap ; 
+} */
 
-.nav-item{
+/* *****************NavBar landingPage****************************** */
+/* .nav-item{
   display: flex;
   align-items: center;
 }
@@ -55,7 +58,6 @@ body {
   font-weight: bold;
   color: #2c3e50;
   display: flex;
-  /* gap: 12px; */
   align-items: center;
   margin-right: -3px;
 }
@@ -73,7 +75,8 @@ body {
 
 .main-nav-item:hover {
   text-decoration: underline;
-}
+} */
+/* *********************************************** */
 
 .main-nav-logo {
   display: flex;
@@ -85,16 +88,19 @@ body {
   width: 200px;
 }
 
-.hero {
+/******************* image de fond landingPage**************************/
+
+/* .hero {
   background-image: url('/public/assets/img/bank-tree.jpeg');
+ 
   background-position: 0 -50px;
   background-size: cover;
   background-repeat: no-repeat;
   height: 300px;
   position: relative;
-}
+} */
 
-.hero-content {
+/* .hero-content {
   position: relative;
   top: 2rem;
   width: 200px;
@@ -102,20 +108,20 @@ body {
   padding: 2rem;
   text-align: left;
   margin: 0 auto;
-}
+} */
 
-.hero-content .subtitle {
+/* .hero-content .subtitle {
   font-weight: bold;
   font-size: 1rem;
   margin: 0;
-}
+} */
 
-.hero-content .text {
+/* .hero-content .text {
   margin-bottom: 0;
   font-size: 0.9rem;
-}
+} */
 
-@media (min-width: 520px) {
+/* @media (min-width: 520px) {
   .hero {
     height: 400px;
     background-position: 0% 33%;
@@ -126,7 +132,7 @@ body {
     top: 50px;
     right: 50px;
     width: 300px;
-    /* margin: 2rem; */
+    margin: 2rem;
   }
 
   .hero-content .subtitle {
@@ -137,11 +143,12 @@ body {
   .hero-content .text {
     font-size: 1.2rem;
   }
-}
+} */
 
+/*****************Fin de image de fond*************************/
 
-
-.features {
+/*****************Images de la landinPage*************************/
+/* .features {
   display: flex;
   flex-direction: column;
 }
@@ -150,28 +157,30 @@ body {
   .features {
     flex-direction: row;
   }
-}
+} */
 
-.feature-icon {
+/* .feature-icon {
   width: 100px;
   border: 10px solid #00bc77;
   border-radius: 50%;
   padding: 1rem;
-}
+} */
 
-.feature-item {
+/* .feature-item {
   flex: 1;
   padding: 2.5rem;
-}
+} */
 
-.feature-item-title {
+/* .feature-item-title {
   color: #222;
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
-}
+} */
+/*****************Fin des Images de la landinPage*************************/
 
-.sign-in-button {
+/***************** Formulaire de connexion *************************/
+/* .sign-in-button {
   display: block;
   width: 100%;
   padding: 8px;
@@ -183,54 +192,54 @@ body {
   color: #fff;
   cursor: pointer;
   transition: transform 0.3s ease-in-out 0s;
-}
+} */
 
-.sign-in-button:hover{
+/* .sign-in-button:hover{
   color: black;
   transform: scale(1.03);
-}
+} */
 
-.sign-in-content {
+/* .sign-in-content {
   box-sizing: border-box;
   background-color: white;
   width: 300px;
   margin: 0 auto;
   margin-top: 3rem;
   padding: 2rem;
-}
+} */
 
-.sign-in-icon {
+/* .sign-in-icon {
   font-size: 3rem;
-}
+} */
 
-.input-remember {
+/* .input-remember {
   display: flex;
-}
+} */
 
-.input-remember label {
+/* .input-remember label {
   margin-left: 0.25rem;
-}
-.error-message{
+} */
+/* .error-message{
   color: red;
   font-weight: 600;
-}
+} */
 
-.input-wrapper {
+/* .input-wrapper {
   display: flex;
   flex-direction: column;
   text-align: left;
   margin-bottom: 1rem;
-}
+} */
 
-.input-wrapper label {
+/* .input-wrapper label {
   font-weight: bold;
-}
+} */
 
-.input-wrapper input {
+/* .input-wrapper input {
   padding: 5px;
   font-size: 1.2rem;
-}
-
+} */
+/******************* Fin du formulaire de connexion ******************************/
 .footer {
   display: flex;
   justify-content: center;

@@ -1,10 +1,20 @@
 import React from "react";
+import styled from "styled-components";
 import featureItemsData from "../../data/featureItemsData";
 import FeatureCard from "./FeatureCard";
 
+const Features = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 920px) {
+    flex-direction: row;
+  }
+`;
+
 function FeatureItems() {
   return (
-    <div className="features">
+    <Features>
       {featureItemsData.map((item) => (
         <FeatureCard
           key={item.imgSrc}
@@ -15,7 +25,7 @@ function FeatureItems() {
           {item.description}
         </FeatureCard>
       ))}
-    </div>
+    </Features>
   );
 }
 

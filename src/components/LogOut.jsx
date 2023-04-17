@@ -2,11 +2,9 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { logoutUser } from "../store/userSlice";
 import { Link, useNavigate } from "react-router-dom";
-// import styled from "styled-components";
 
-// const Name = styled.span`
-//   font-size: 1.5rem;
-// `;
+//import du css de la navBar:
+import { NavLink } from "./NavBar";
 
 const LogOut = () => {
   const dispatch = useDispatch();
@@ -19,10 +17,10 @@ const LogOut = () => {
   };
 
   return (
-    <Link className="main-nav-item" to="/" onClick={handleLogout}>
+    <NavLink className="main-nav-item" to="/" onClick={handleLogout}>
       <i className="fa fa-sign-out"></i>
       Sign Out
-    </Link>
+    </NavLink>
   );
 };
 
