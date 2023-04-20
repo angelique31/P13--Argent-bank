@@ -12,6 +12,14 @@ const Features = styled.div`
   }
 `;
 
+/**
+ * Afficher les composants FeatureCard basé sur les données du tableau featureItemsData.
+ *
+ * Display FeatureCard components based on data from the featureItemsData array.
+ *
+ * @component
+ */
+
 function FeatureItems() {
   return (
     <Features>

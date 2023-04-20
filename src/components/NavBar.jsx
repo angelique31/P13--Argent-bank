@@ -7,7 +7,10 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 20px;
+  padding: 15px;
+  @media (min-width: 520px) {
+    padding: 15px 20px;
+  }
 `;
 
 export const NavLink = styled(Link)`
@@ -28,6 +31,11 @@ export const NavLink = styled(Link)`
 const NavItem = styled.div`
   display: flex;
   align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  @media (min-width: 485px) {
+    flex-direction: row;
+  }
 `;
 
 const MainNavItem = styled.div`
@@ -35,13 +43,22 @@ const MainNavItem = styled.div`
   margin-right: 1.5rem;
   display: flex;
   gap: 5px;
+  margin-right: 10px;
+`;
+
+const LogoImage = styled.img`
+  max-width: 100%;
+  width: 160px;
+  @media (min-width: 520px) {
+    width: 200px;
+  }
 `;
 
 const Navbar = ({ showLogout, displayName }) => {
   return (
     <Nav className="main-nav">
       <NavLink to="/" className="main-nav-logo">
-        <img
+        <LogoImage
           className="main-nav-logo-image"
           src="./assets/img/argentBankLogo.png"
           alt="Argent Bank Logo"

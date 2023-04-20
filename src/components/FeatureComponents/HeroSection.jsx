@@ -6,7 +6,6 @@ const Hero = styled.div`
   background-position: 0 -50px;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 300px;
   position: relative;
   @media (min-width: 520px) {
     height: 400px;

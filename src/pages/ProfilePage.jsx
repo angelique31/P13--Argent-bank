@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchUserProfile, updateUserProfile } from "../store/userSlice";
+import {
+  fetchUserProfile,
+  updateUserProfile,
+} from "../store/actions/userActions";
 import EditableName from "../components/EditableName";
 import styled from "styled-components";
 import "../css/main.css";
@@ -18,6 +21,16 @@ const MainProfile = styled.main`
   padding: 30px;
 `;
 
+/**
+ * Affiche les informations de profil d'un utilisateur connecté
+ * Met à jour le nom de l'utilisateur et d'afficher ses comptes
+ *
+ * Displays the profile information of a logged-in user.
+ * Update the user's name and displaying their accounts.
+ * @component
+ * @returns {React.Element} - Le rendu du composant ProfilePage.  The render of the ProfilePage component.
+ */
+
 const ProfilePage = () => {
   const profile = useSelector((state) => state.user.profile);
   const error = useSelector((state) => state.user.error);
@@ -30,6 +43,10 @@ const ProfilePage = () => {
     }
   }, [profile]);
 
+  /**
+   * Met à jour le nom de l'utilisateur dans le profil.
+   * @param {*} newName - Le nouveau nom complet de l'utilisateur.
+   */
   const handleNameUpdate = async (newName) => {
     const jwtToken = localStorage.getItem("jwtToken");
     const updatedProfile = {
@@ -40,7 +57,7 @@ const ProfilePage = () => {
         .join(" "),
     };
 
-    dispatch(updateUserProfile({ token: jwtToken, updatedProfile })); // Appeler l'action updateUserProfile
+    dispatch(updateUserProfile({ token: jwtToken, updatedProfile }));
 
     setDisplayName(newName);
   };
@@ -63,7 +80,6 @@ const ProfilePage = () => {
     <>
       <Navbar showLogout={true} displayName={displayName} />
       {error && <p className="error-message">Error: {error}</p>}
-      {/* <main className="main bg-dark"> */}
       <MainProfile>
         <div className="header">
           <h1 className="profile-title">

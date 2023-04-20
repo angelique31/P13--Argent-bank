@@ -11,6 +11,7 @@ const ApiService = {
         }
       );
       const jwtToken = response.data.body.token;
+      // console.log("LoginUser Successfully:", response.data);
       return jwtToken;
     } catch (error) {
       console.error("Error logging in:", error);
@@ -39,7 +40,7 @@ const ApiService = {
           },
         }
       );
-      // console.log(response);
+      // console.log("getUserProfile Successfully:", response.data);
       return {
         status: response.data.status,
         message: response.data.message,
@@ -73,7 +74,7 @@ const ApiService = {
           },
         }
       );
-      console.log(response);
+
       if (response.status !== 200) {
         throw new Error("Erreur lors de la mise à jour du profil.");
       }

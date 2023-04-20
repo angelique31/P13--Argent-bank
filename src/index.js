@@ -1,12 +1,17 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import App from "./App";
 import { Provider } from "react-redux";
-import store from "./store/store";
-import "../src/css/main.css";
 import GlobalStyles from "./GlobalStyles";
+import rootReducer from "./store/reducer/rootReducer";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+import { configureStore } from "@reduxjs/toolkit";
+
+const store = configureStore({
+  reducer: rootReducer,
+});
+
+const root = createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <GlobalStyles />

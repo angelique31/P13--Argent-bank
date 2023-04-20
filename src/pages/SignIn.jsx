@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUser, fetchUserProfile } from "../store/userSlice";
+import { loginUser, fetchUserProfile } from "../store/actions/userActions";
 
 import React from "react";
 import Footer from "../components/Footer";
@@ -73,6 +73,15 @@ const SignInButton = styled.button`
   }
 `;
 
+/**
+ * Formulaire de connexion permettant aux utilisateurs de saisir leur email et mot de passe pour se connecter à l'application.
+ * Case à cocher pour enregistrer les informations d'identification de l'utilisateur pour les connexions futures.
+ *
+ * Sign-in form that allows users to enter their email and password to log in to the application.
+ * Checkbox to store user credentials for future logins.
+ *
+ */
+
 function SignIn() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -95,7 +104,6 @@ function SignIn() {
 
   const handleRememberMeChange = (event) => {
     setRememberMe(event.target.checked);
-    // console.log("Remember me changed:", event.target.checked);
   };
 
   React.useEffect(() => {
