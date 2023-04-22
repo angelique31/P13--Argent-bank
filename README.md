@@ -18,8 +18,12 @@ Built a React Redux project with external datas from a API
 
 ### Tasks for this project
 
-- [Github](https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API/tree/master/.github/ISSUE_TEMPLATE)
+- [🔗 Link to issues](./src/assets/issues.md)
+
 - [Wireframes](https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API/tree/master/designs/wireframes)
+
+- [🔗 Link to issues](../back-end/designs/wireframes/edit-user-name.png)
+- [🔗 Link to issues](../back-end/designs/wireframes/transactions.png)
 
 # Guide installation
 

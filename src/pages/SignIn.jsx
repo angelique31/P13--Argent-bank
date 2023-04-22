@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser, fetchUserProfile } from "../store/actions/userActions";
+import React, { useEffect } from "react";
 
-import React from "react";
+// import React from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/NavBar";
 import styled from "styled-components";
@@ -93,6 +94,14 @@ function SignIn() {
 
   const dispatch = useDispatch();
   const error = useSelector((state) => state.user.error);
+
+  // const isLogged = useSelector((state) => state.user.isLogged);
+
+  // useEffect(() => {
+  //   if (!isLogged) {
+  //     navigate("/login");
+  //   }
+  // }, [isLogged, navigate]);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);

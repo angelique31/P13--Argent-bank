@@ -39,6 +39,25 @@ const ButtonContainer = styled.div`
   margin-top: 20px;
 `;
 
+const EditButton = styled.button`
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out 0s;
+  &:hover {
+    color: black;
+    transform: scale(1.03);
+  }
+`;
+
+const Header = styled.div`
+  color: #fff;
+  margin-bottom: 2rem;
+`;
+
 /**
  * Composant permettant à l'utilisateur de modifier son nom complet.
  * Component allowing the user to edit their full name.
@@ -67,7 +86,7 @@ const EditableName = ({ fullName, onSave, onCancel }) => {
   const handleCancel = () => {
     setInputFirstName(fullName ? fullName.split(" ")[0] : "");
     setInputLastName(fullName ? fullName.split(" ")[1] : "");
-    onCancel();
+    // onCancel();
     // setEditing(false);
   };
 
@@ -80,11 +99,9 @@ const EditableName = ({ fullName, onSave, onCancel }) => {
 
   if (!editing) {
     return (
-      <div className="header">
-        <button className="edit-button" onClick={() => setEditing(true)}>
-          Edit Name
-        </button>
-      </div>
+      <Header>
+        <EditButton onClick={() => setEditing(true)}>Edit Name</EditButton>
+      </Header>
     );
   }
 

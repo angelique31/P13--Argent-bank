@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import styled from "styled-components";
+
+import Account from "../components/Account";
+import EditableName from "../components/EditableName";
+import Footer from "../components/Footer";
+import Navbar from "../components/NavBar";
+
 import {
   fetchUserProfile,
   updateUserProfile,
 } from "../store/actions/userActions";
-import EditableName from "../components/EditableName";
-import styled from "styled-components";
-import "../css/main.css";
-import Footer from "../components/Footer";
-import Navbar from "../components/NavBar";
-import Account from "../components/Account";
+
 import accountData from "../data/accounData";
+// import "../css/main.css";
+// import { useNavigate } from "react-router-dom";
 
 const Name = styled.span`
   font-size: 1.5rem;
@@ -37,11 +41,25 @@ const ProfilePage = () => {
   const dispatch = useDispatch();
   const [displayName, setDisplayName] = useState("");
 
+  // Met à jour le nom d'affichage lorsque le profil est chargé
   useEffect(() => {
     if (profile) {
       setDisplayName(profile.fullName);
     }
   }, [profile]);
+
+  // Objet navigate pour la navigation entre les routes
+  // const navigate = useNavigate();
+
+  // Vérifie si l'utilisateur est connecté
+  // const isLogged = useSelector((state) => state.user.isLogged);
+
+  // Redirige l'utilisateur vers la page de connexion s'il n'est pas connecté
+  // useEffect(() => {
+  //   if (!isLogged) {
+  //     navigate("/login");
+  //   }
+  // }, [isLogged, navigate]);
 
   /**
    * Met à jour le nom de l'utilisateur dans le profil.
@@ -51,26 +69,27 @@ const ProfilePage = () => {
     const jwtToken = localStorage.getItem("jwtToken");
     const updatedProfile = {
       firstName: newName.split(" ")[0],
-      lastName: newName
-        .split(" ")
-        .slice(1)
-        .join(" "),
+      lastName: newName.split(" ")[1],
     };
 
+    // Appeler l'action "updateUserProfile" pour mettre à jour le profil de l'utilisateur
+    // avec les nouvelles informations (updatedProfile), en utilisant le token JWT
     dispatch(updateUserProfile({ token: jwtToken, updatedProfile }));
 
     setDisplayName(newName);
   };
 
-  const handleNameCancel = () => {};
+  // const handleNameCancel = () => {};
 
   useEffect(() => {
+    // Récupérer le token JWT depuis le localStorage
     const jwtToken = localStorage.getItem("jwtToken");
-
+    // Vérifier si le token JWT existe
     if (!jwtToken) {
-      // Si l'utilisateur n'est pas connecté, rediriger vers la page de connexion
+      // Si l'utilisateur n'est pas connecté (pas de token JWT trouvé), rediriger vers la page de connexion
       window.location.href = "/login";
     } else {
+      // Si un token JWT est présent (l'utilisateur est connecté),
       // Récupérer le profil de l'utilisateur depuis l'API backend
       dispatch(fetchUserProfile(jwtToken));
     }
@@ -89,7 +108,7 @@ const ProfilePage = () => {
               <EditableName
                 fullName={profile.fullName}
                 onSave={handleNameUpdate}
-                onCancel={handleNameCancel}
+                // onCancel={handleNameCancel}
               />
             )}
           </h1>
