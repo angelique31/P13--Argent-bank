@@ -29,7 +29,7 @@ Built a React Redux project with external datas from a API
 
 ## Install Front
 
-- And second time, clone the repository of Argent Bank Front-End on [front-end-Argent-bank](https://github.com/Jerry-bz/Utilisez-une-API-pour-un-compte-utilisateur-bancaire-avec-React.git)
+- And second time, clone the repository of Argent Bank Front-End on [front-end-Argent-bank](https://github.com/angelique31/P13--Argent-bank)
 
 Inside this Front-End repository, install dependencies:
 
