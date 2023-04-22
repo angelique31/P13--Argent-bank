@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+## Argent Bank is a banking application that identifies users
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project ARGENTBANK
 
-## Available Scripts
+Built a React Redux project with external datas from a API
 
-In the project directory, you can run:
+### Technologies and Dependencies
 
-### `npm start`
+- Javascript
+- CSS
+- Visual Studio code
+- [Npm](https://www.npmjs.com/package/npm) (v8.19.2)
+- [NodeJS](https://nodejs.org/en/) (v18.12.1)
+- [React](https://fr.reactjs.org/) (v13.4.0)
+- [React-router-dom](https://reactrouter.com/) (v6.9.0)
+- [Axios](https://axios-http.com/docs/intro) (v1.3.4)
+- [Redux Toolkit](https://redux-toolkit.js.org/) (v1.9.3)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Tasks for this project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Github](https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API/tree/master/.github/ISSUE_TEMPLATE)
+- [Wireframes](https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API/tree/master/designs/wireframes)
 
-### `npm test`
+# Guide installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Install Back
 
-### `npm run build`
+- First, follow the instructions to install the backend API on [back-end-Argent-bank](https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Install Front
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- And second time, clone the repository of Argent Bank Front-End on [front-end-Argent-bank](https://github.com/Jerry-bz/Utilisez-une-API-pour-un-compte-utilisateur-bancaire-avec-React.git)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Inside this Front-End repository, install dependencies:
 
-### `npm run eject`
+`npm install`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+With the terminal, launch Front-End on port 3000:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`npm start`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Front-End is now rendered at URL `http://localhost:3000`
