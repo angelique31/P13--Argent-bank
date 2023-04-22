@@ -22,8 +22,19 @@ Built a React Redux project with external datas from a API
 
 - [Wireframes](https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API/tree/master/designs/wireframes)
 
-- [🔗 Link to issues](../back-end/designs/wireframes/edit-user-name.png)
-- [🔗 Link to issues](../back-end/designs/wireframes/transactions.png)
+### Populated Database Data
+
+Enter this email and password in the login form :
+
+#### Tony Stark
+
+- Email: tony@stark.com
+- Password: password123
+
+### Steve Rogers
+
+- steve@rogers.com
+- password456
 
 # Guide installation
 
