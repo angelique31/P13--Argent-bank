@@ -36,7 +36,6 @@ const EditableName = ({ fullName, onSave, onCancel }) => {
   const handleCancel = () => {
     setInputFirstName(fullName ? fullName.split(" ")[0] : "");
     setInputLastName(fullName ? fullName.split(" ")[1] : "");
-    // onCancel();
     // setEditing(false);
   };
 

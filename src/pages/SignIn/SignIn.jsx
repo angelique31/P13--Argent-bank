@@ -1,11 +1,11 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser, fetchUserProfile } from "../../store/actions/userActions";
-// import React, { useEffect } from "react";
 
-import React from "react";
-import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
+
 import {
   Main,
   SignInContent,
@@ -40,14 +40,6 @@ function SignIn() {
   const dispatch = useDispatch();
   const error = useSelector((state) => state.user.error);
 
-  // const isLogged = useSelector((state) => state.user.isLogged);
-
-  // useEffect(() => {
-  //   if (!isLogged) {
-  //     navigate("/login");
-  //   }
-  // }, [isLogged, navigate]);
-
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
@@ -73,13 +65,20 @@ function SignIn() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Liste des emails autorisés
-    const allowedEmails = ["tony@stark.com", "steve@rogers.com"];
+    const allowedCredentials = {
+      "tony@stark.com": "password123",
+      "steve@rogers.com": "password456",
+    };
 
     // Vérifier si l'email entré est autorisé
-    if (!allowedEmails.includes(email)) {
-      // console.error("Email non autorisé");
+    if (!Object.keys(allowedCredentials).includes(email)) {
       setCustomError("This email is not allowed");
+      return;
+    }
+
+    // Vérifier si le mot de passe entré correspond au mot de passe de l'email autorisé
+    if (allowedCredentials[email] !== password) {
+      setCustomError("This password is not allowed");
       return;
     }
 
@@ -136,7 +135,6 @@ function SignIn() {
                 onChange={handlePasswordChange}
               />
             </InputWrapper>
-            {/* <div className="input-remember"> */}
             <RememberMe>
               <Input
                 type="checkbox"
@@ -148,9 +146,7 @@ function SignIn() {
                 Remember me
               </RememberMeLabel>
             </RememberMe>
-            {/* {customError && <p className="error-message">{customError}</p>} */}
             {customError && <ErrorMessage>{customError}</ErrorMessage>}
-            {/* <button className="sign-in-button" type="submit"> */}
             <SignInButton type="submit">Sign In</SignInButton>
             {error && <p className="error-message">{error}</p>}
           </form>

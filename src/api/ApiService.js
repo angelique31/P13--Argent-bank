@@ -11,7 +11,6 @@ const ApiService = {
         }
       );
       const jwtToken = response.data.body.token;
-      // console.log("LoginUser Successfully:", response.data);
       return jwtToken;
     } catch (error) {
       console.error("Error logging in:", error);
@@ -21,7 +20,6 @@ const ApiService = {
 
         if (errorCode === 400) {
           console.error("Invalid fields or bad request.");
-          // Afficher un message d'erreur à l'utilisateur
         } else if (errorCode === 500) {
           console.error("Internal server error.");
         }
@@ -53,7 +51,6 @@ const ApiService = {
 
         if (errorCode === 400) {
           console.error("Invalid fields or bad request.");
-          // Afficher un message d'erreur à l'utilisateur
         } else if (errorCode === 500) {
           console.error("Internal server error.");
         }

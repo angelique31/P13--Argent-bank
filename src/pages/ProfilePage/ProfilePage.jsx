@@ -14,8 +14,6 @@ import {
 import accountData from "../../data/accounData";
 
 import { Name, MainProfile } from "./ProfilePageStyles";
-// import "../css/main.css";
-// import { useNavigate } from "react-router-dom";
 
 /**
  * Affiche les informations de profil d'un utilisateur connecté
@@ -29,6 +27,7 @@ import { Name, MainProfile } from "./ProfilePageStyles";
 
 const ProfilePage = () => {
   const profile = useSelector((state) => state.user.profile);
+  // console.log(profile);
   const error = useSelector((state) => state.user.error);
   const dispatch = useDispatch();
   const [displayName, setDisplayName] = useState("");
@@ -39,19 +38,6 @@ const ProfilePage = () => {
       setDisplayName(profile.fullName);
     }
   }, [profile]);
-
-  // Objet navigate pour la navigation entre les routes
-  // const navigate = useNavigate();
-
-  // Vérifie si l'utilisateur est connecté
-  // const isLogged = useSelector((state) => state.user.isLogged);
-
-  // Redirige l'utilisateur vers la page de connexion s'il n'est pas connecté
-  // useEffect(() => {
-  //   if (!isLogged) {
-  //     navigate("/login");
-  //   }
-  // }, [isLogged, navigate]);
 
   /**
    * Met à jour le nom de l'utilisateur dans le profil.
@@ -70,8 +56,6 @@ const ProfilePage = () => {
 
     setDisplayName(newName);
   };
-
-  // const handleNameCancel = () => {};
 
   useEffect(() => {
     // Récupérer le token JWT depuis le localStorage
@@ -100,7 +84,6 @@ const ProfilePage = () => {
               <EditableName
                 fullName={profile.fullName}
                 onSave={handleNameUpdate}
-                // onCancel={handleNameCancel}
               />
             )}
           </h1>
