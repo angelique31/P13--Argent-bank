@@ -5,25 +5,29 @@ import Footer from "../components/Footer";
 import FeatureItems from "../components/FeatureComponents/FeatureItems";
 import HeroSection from "../components/FeatureComponents/HeroSection";
 
-// const MainContainer = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   min-height: 100vh;
-// `;
+const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
+const Main = styled.main`
+  flex: 1 1;
+`;
 
 const LandingPage = () => {
   return (
-    <div>
+    <MainContainer>
       <Navbar />
-      <main>
+      <Main>
         <HeroSection />
         <section className="features">
           <h2 className="sr-only">Features</h2>
           <FeatureItems />
         </section>
-      </main>
+      </Main>
       <Footer />
-    </div>
+    </MainContainer>
   );
 };
 

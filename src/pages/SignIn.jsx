@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser, fetchUserProfile } from "../store/actions/userActions";
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 
-// import React from "react";
+import React from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/NavBar";
 import styled from "styled-components";
@@ -12,6 +12,9 @@ const Main = styled.main`
   background-color: #e0e6ed;
   padding: 30px;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 `;
 
 const SignInContent = styled.section`

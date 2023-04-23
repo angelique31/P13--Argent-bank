@@ -41,7 +41,7 @@ const ApiService = {
         }
       );
       // console.log("getUserProfile Successfully:", response.data);
-      console.log("First Name:", response.data.body.firstName);
+      // console.log("First Name:", response.data.body.firstName);
       return {
         status: response.data.status,
         message: response.data.message,

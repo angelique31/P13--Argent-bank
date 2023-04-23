@@ -60,7 +60,8 @@ const Navbar = ({ showLogout, displayName }) => {
       <NavLink to="/" className="main-nav-logo">
         <LogoImage
           className="main-nav-logo-image"
-          src="./assets/img/argentBankLogo.png"
+          // src="./assets/img/argentBankLogo.png"
+          src={`${process.env.PUBLIC_URL}/assets/img/argentBankLogo.png`}
           alt="Argent Bank Logo"
         />
         <h1 className="sr-only">Argent Bank</h1>

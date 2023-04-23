@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Hero = styled.div`
-  background-image: url("assets/img/bank-tree.jpeg");
+  background-image: url(${process.env.PUBLIC_URL +
+  "/assets/img/bank-tree.jpeg"});
   background-position: 0 -50px;
   background-size: cover;
   background-repeat: no-repeat;

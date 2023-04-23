@@ -23,6 +23,9 @@ const Name = styled.span`
 const MainProfile = styled.main`
   background-color: #e0e6ed;
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 `;
 
 /**
