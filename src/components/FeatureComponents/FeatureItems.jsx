@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import featureItemsData from "../../data/featureItemsData";
-import FeatureCard from "./FeatureCard";
+import FeatureCard from "./FeatureCard/FeatureCard";
 
 const Features = styled.div`
   display: flex;

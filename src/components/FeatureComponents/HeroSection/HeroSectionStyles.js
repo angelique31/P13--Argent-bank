@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const Hero = styled.div`
+export const Hero = styled.div`
   background-image: url(${process.env.PUBLIC_URL +
   "/assets/img/bank-tree.jpeg"});
   background-position: 0 -50px;
@@ -26,7 +25,7 @@ const Hero = styled.div`
   }
 `;
 
-const HeroContent = styled.section`
+export const HeroContent = styled.section`
   position: relative;
   top: 2rem;
   width: 75px;
@@ -53,7 +52,7 @@ const HeroContent = styled.section`
   }
 `;
 
-const Subtitle = styled.p`
+export const Subtitle = styled.p`
   font-weight: bold;
   font-size: 0.6rem;
   margin: 0;
@@ -73,7 +72,7 @@ const Subtitle = styled.p`
   }
 `;
 
-const Text = styled.p`
+export const Text = styled.p`
   margin-bottom: 0;
   font-size: 0.5rem;
   @media (min-width: 720px) {
@@ -87,19 +86,3 @@ const Text = styled.p`
     font-size: 1.5rem;
   }
 `;
-
-const HeroSection = () => {
-  return (
-    <Hero>
-      <HeroContent>
-        <h2 className="sr-only">Promoted Content</h2>
-        <Subtitle>No fees.</Subtitle>
-        <Subtitle>No minimum deposit.</Subtitle>
-        <Subtitle>High interest rates.</Subtitle>
-        <Text>Open a savings account with Argent Bank today!</Text>
-      </HeroContent>
-    </Hero>
-  );
-};
-
-export default HeroSection;

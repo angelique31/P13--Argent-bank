@@ -5,7 +5,7 @@ import { logoutUser } from "../store/reducer/userReducer";
 import { useNavigate } from "react-router-dom";
 
 //import du css de la navBar:
-import { NavLink } from "./NavBar";
+import { NavLink } from "./NavBar/NavBarStyles";
 
 /**
  * Gère la déconnexion de l'utilisateur.

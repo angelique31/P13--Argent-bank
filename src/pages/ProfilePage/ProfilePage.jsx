@@ -1,32 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import styled from "styled-components";
 
-import Account from "../components/Account";
-import EditableName from "../components/EditableName";
-import Footer from "../components/Footer";
-import Navbar from "../components/NavBar";
+import Account from "../../components/Account/Account";
+import EditableName from "../../components/EditableName/EditableName";
+import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/NavBar/NavBar";
 
 import {
   fetchUserProfile,
   updateUserProfile,
-} from "../store/actions/userActions";
+} from "../../store/actions/userActions";
 
-import accountData from "../data/accounData";
+import accountData from "../../data/accounData";
+
+import { Name, MainProfile } from "./ProfilePageStyles";
 // import "../css/main.css";
 // import { useNavigate } from "react-router-dom";
-
-const Name = styled.span`
-  font-size: 1.5rem;
-`;
-
-const MainProfile = styled.main`
-  background-color: #e0e6ed;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-`;
 
 /**
  * Affiche les informations de profil d'un utilisateur connecté

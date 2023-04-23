@@ -40,8 +40,6 @@ const ApiService = {
           },
         }
       );
-      // console.log("getUserProfile Successfully:", response.data);
-      // console.log("First Name:", response.data.body.firstName);
       return {
         status: response.data.status,
         message: response.data.message,
@@ -58,7 +56,6 @@ const ApiService = {
           // Afficher un message d'erreur à l'utilisateur
         } else if (errorCode === 500) {
           console.error("Internal server error.");
-          // Afficher un message d'erreur à l'utilisateur
         }
       }
     }

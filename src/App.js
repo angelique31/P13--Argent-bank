@@ -1,9 +1,9 @@
 import React from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
-import LandingPage from "./pages/LandingPage";
-import SignIn from "./pages/SignIn";
-import ProfilePage from "./pages/ProfilePage";
-import NotFoundPage from "./pages/NotFoundPage";
+import LandingPage from "./pages/LandingPage/LandingPage";
+import SignIn from "./pages/SignIn/SignIn";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 const App = () => {
   return (
