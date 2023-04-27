@@ -38,11 +38,11 @@ Enter this email and password in the login form :
 
 # Guide installation
 
-## Install Back
+### Install Back
 
 - First, follow the instructions to install the backend API on [back-end-Argent-bank](https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API)
 
-## Install Front
+### Install Front
 
 - And second time, clone the repository of Argent Bank Front-End on [front-end-Argent-bank](https://github.com/angelique31/P13--Argent-bank)
 
@@ -60,8 +60,8 @@ Front-End is now rendered at URL `http://localhost:3000`
 
 To view the API documentation with the additional transaction endpoints, follow these steps:
 
-1. Open the Swagger Editor at https://editor.swagger.io/.
-2. Copy the entire contents of the YAML file containing the API documentation from your project repository.
+1. Open the Swagger Editor at https://editor.swagger.io/
+2. Copy the entire contents of [the YAML file](https://github.com/angelique31/P13--Argent-bank/blob/main/swagger.yaml).
 3. In the Swagger Editor, delete the existing content in the editing pane on the left side.
 4. Paste the content you copied from your YAML file into the editing pane.
 
