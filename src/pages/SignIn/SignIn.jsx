@@ -92,12 +92,10 @@ function SignIn() {
         localStorage.setItem("rememberMe", true);
         localStorage.setItem("email", email);
         localStorage.setItem("password", password);
-        // console.log("Remember me is checked, email saved:", email);
       } else {
         localStorage.removeItem("rememberMe");
         localStorage.removeItem("email");
         localStorage.removeItem("password");
-        // console.log("Remember me is not checked, email not saved");
       }
     } catch (error) {
       console.error(error);

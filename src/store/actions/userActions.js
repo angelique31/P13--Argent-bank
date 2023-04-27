@@ -42,7 +42,6 @@ export const updateUserProfile = createAsyncThunk(
   async ({ token, updatedProfile }, { rejectWithValue }) => {
     try {
       const data = await updateUserProfileApi(token, updatedProfile);
-
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

@@ -10,7 +10,6 @@ export const loginUser = async (email, password) => {
       }
     );
     const jwtToken = response.data.body.token;
-
     return jwtToken;
   } catch (error) {
     console.error("Error logging in:", error);
@@ -38,7 +37,6 @@ export const getUserProfile = async (jwtToken) => {
         },
       }
     );
-    // console.log("API response:", response.data);
     return {
       status: response.data.status,
       message: response.data.message,
@@ -68,7 +66,6 @@ export const updateUserProfile = async (jwtToken, updatedProfile) => {
     if (response.status !== 200) {
       throw new Error("Erreur lors de la mise à jour du profil.");
     }
-
     return response.data.body;
   } catch (error) {
     console.error("Error updating user profile:", error);

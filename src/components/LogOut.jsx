@@ -1,10 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { logoutUser } from "../store/reducer/userReducer";
-
 import { useNavigate } from "react-router-dom";
-
-//import du css de la navBar:
 import { NavLink } from "./NavBar/NavBarStyles";
 
 /**

@@ -55,3 +55,14 @@ With the terminal, launch Front-End on port 3000:
 `npm start`
 
 Front-End is now rendered at URL `http://localhost:3000`
+
+## API Documentation
+
+To view the API documentation with the additional transaction endpoints, follow these steps:
+
+1. Open the Swagger Editor at https://editor.swagger.io/.
+2. Copy the entire contents of the YAML file containing the API documentation from your project repository.
+3. In the Swagger Editor, delete the existing content in the editing pane on the left side.
+4. Paste the content you copied from your YAML file into the editing pane.
+
+The Swagger Editor will display the API documentation.
