@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/P13--Argent-bank/static/js/main.ba22888f.js",
+    "main.js": "/P13--Argent-bank/static/js/main.d5407245.js",
     "index.html": "/P13--Argent-bank/index.html",
-    "main.ba22888f.js.map": "/P13--Argent-bank/static/js/main.ba22888f.js.map"
+    "main.d5407245.js.map": "/P13--Argent-bank/static/js/main.d5407245.js.map"
   },
   "entrypoints": [
-    "static/js/main.ba22888f.js"
+    "static/js/main.d5407245.js"
   ]
 }
