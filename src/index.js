@@ -4,7 +4,6 @@ import App from "./App";
 import { Provider } from "react-redux";
 import GlobalStyles from "./assets/GlobalStyles";
 import rootReducer from "./store/reducer/rootReducer";
-
 import { configureStore } from "@reduxjs/toolkit";
 
 const store = configureStore({

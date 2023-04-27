@@ -46,7 +46,7 @@ export const MainNavItem = styled.div`
 
 export const LogoImage = styled.img`
   max-width: 100%;
-  width: 160px;
+  width: 126px;
   @media (min-width: 520px) {
     width: 200px;
   }

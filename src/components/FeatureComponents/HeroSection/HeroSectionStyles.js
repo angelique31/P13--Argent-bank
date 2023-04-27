@@ -12,16 +12,17 @@ export const Hero = styled.div`
     height: 400px;
   }
   @media (min-width: 845px) {
-    height: 530px;
+    // height: 530px;
   }
   @media (min-width: 1079px) {
-    height: 664px;
+    height: 466px;
+    background-position: 0 -149px;
   }
   @media (min-width: 1500px) {
-    height: 864px;
+    height: 564px;
   }
-  @media (min-width: 1500px) {
-    height: 960px;
+  @media (min-width: 1800px) {
+    height: 652px;
   }
 `;
 
@@ -32,7 +33,7 @@ export const HeroContent = styled.section`
   background: white;
   padding: 5px;
   text-align: left;
-  right: -280px;
+  right: -10px;
   @media (min-width: 440px) {
     right: -310px;
   }

@@ -38,8 +38,11 @@ export const AccountTitle = styled.h3`
 
 export const AccountAmount = styled.p`
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
+  @media (min-width: 720px) {
+    font-size: 2.5rem;
+  }
 `;
 
 export const AccountAmountDescription = styled.p`

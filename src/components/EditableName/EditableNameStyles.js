@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
 export const Input = styled.input`
+  width: 100px;
   ::placeholder {
     color: #c4c4c4;
+  }
+  @media (min-width: 420px) {
+    width: 200px;
   }
 `;
 

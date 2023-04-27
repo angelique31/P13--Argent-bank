@@ -12,10 +12,13 @@ export const Main = styled.main`
 export const SignInContent = styled.section`
   box-sizing: border-box;
   background-color: white;
-  width: 300px;
+  width: 270px;
   margin: 0 auto;
   margin-top: 3rem;
   padding: 2rem;
+  @media (min-width: 519px) {
+    width: 300px;
+  }
 `;
 
 export const Icon = styled.i`
