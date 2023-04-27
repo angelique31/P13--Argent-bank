@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import Account from "../../components/Account/Account";
 import EditableName from "../../components/EditableName/EditableName";
@@ -27,9 +28,9 @@ import { Name, MainProfile } from "./ProfilePageStyles";
 
 const ProfilePage = () => {
   const profile = useSelector((state) => state.user.profile);
-  // console.log(profile);
   const error = useSelector((state) => state.user.error);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [displayName, setDisplayName] = useState("");
 
   // Met à jour le nom d'affichage lorsque le profil est chargé
@@ -63,13 +64,13 @@ const ProfilePage = () => {
     // Vérifier si le token JWT existe
     if (!jwtToken) {
       // Si l'utilisateur n'est pas connecté (pas de token JWT trouvé), rediriger vers la page de connexion
-      window.location.href = "/login";
+      navigate("/login");
     } else {
       // Si un token JWT est présent (l'utilisateur est connecté),
       // Récupérer le profil de l'utilisateur depuis l'API backend
       dispatch(fetchUserProfile(jwtToken));
     }
-  }, [dispatch]);
+  }, [dispatch, navigate]);
 
   return (
     <>
