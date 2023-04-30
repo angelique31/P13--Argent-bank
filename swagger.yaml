@@ -76,6 +76,11 @@ paths:
           type: string
           required: true
           description: Transaction identifier
+        - in: query
+          name: month
+          type: string
+          required: true
+          description: The month for which to modify the transaction
         - in: body
           name: body
           schema:
