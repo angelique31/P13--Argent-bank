@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/static/js/main.4f14b03b.js",
-    "index.html": "/index.html",
-    "main.4f14b03b.js.map": "/static/js/main.4f14b03b.js.map"
+    "main.js": "https://angelique31.github.io/P13--Argent-bank/static/js/main.88cc8ea2.js",
+    "index.html": "https://angelique31.github.io/P13--Argent-bank/index.html",
+    "main.88cc8ea2.js.map": "https://angelique31.github.io/P13--Argent-bank/static/js/main.88cc8ea2.js.map"
   },
   "entrypoints": [
-    "static/js/main.4f14b03b.js"
+    "static/js/main.88cc8ea2.js"
   ]
 }
