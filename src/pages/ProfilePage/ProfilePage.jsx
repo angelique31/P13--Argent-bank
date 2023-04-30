@@ -29,6 +29,7 @@ import { Name, MainProfile } from "./ProfilePageStyles";
 const ProfilePage = () => {
   const profile = useSelector((state) => state.user.profile);
   const error = useSelector((state) => state.user.error);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [displayName, setDisplayName] = useState("");

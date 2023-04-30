@@ -13,10 +13,6 @@ const userSlice = createSlice({
       state.profile = null;
       state.isLoggedIn = false;
     },
-    updateName: (state, action) => {
-      state.profile.firstName = action.payload.firstName;
-      state.profile.lastName = action.payload.lastName;
-    },
   },
   extraReducers: (builder) => {
     builder

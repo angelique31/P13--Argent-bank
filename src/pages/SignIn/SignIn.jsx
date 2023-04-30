@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser, fetchUserProfile } from "../../store/actions/userActions";
 
@@ -40,6 +40,8 @@ function SignIn() {
   const dispatch = useDispatch();
   const error = useSelector((state) => state.user.error);
 
+  const [loggedIn, setLoggedIn] = React.useState(false);
+
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
@@ -59,6 +61,11 @@ function SignIn() {
       if (storedEmail) setEmail(storedEmail);
       if (storedPassword) setPassword(storedPassword);
       setRememberMe(false);
+    }
+
+    // Check if a JWT is present in local storage
+    if (localStorage.getItem("jwtToken")) {
+      setLoggedIn(true);
     }
   }, []);
 
@@ -104,6 +111,7 @@ function SignIn() {
 
   return (
     <>
+      {loggedIn && <Navigate to="/profile" replace />}
       <Navbar />
       <Main>
         <SignInContent>
