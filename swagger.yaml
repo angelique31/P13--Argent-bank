@@ -7,7 +7,7 @@ basePath: /api/v1
 schemes:
   - http
 paths:
-  user/transactions:
+  /user/transactions:
     get:
       summary: Retrieve all transactions for the current month
       parameters:
@@ -15,7 +15,7 @@ paths:
           name: month
           type: string
           description: The month for which to retrieve the transactions (the current month)
-          example: "2023-04"
+          default: "2023-04"
           required: true
       responses:
         200:
@@ -30,6 +30,11 @@ paths:
     post:
       summary: Add a new transaction
       parameters:
+        - in: header
+          name: Authorization
+          type: string
+          description: JWT token for authentication
+          required: true
         - in: body
           name: body
           schema:
@@ -41,7 +46,7 @@ paths:
         400:
           description: Invalid request (incorrect transaction data)
 
-  user/transactions/{transactionId}:
+  /user/transactions/{transactionId}:
     get:
       summary: Retrieve details of a specific transaction
       parameters:
@@ -50,6 +55,11 @@ paths:
           type: string
           required: true
           description: Transaction identifier
+        - in: query
+          name: month
+          type: string
+          required: true
+          description: The month for which to retrieve the transaction
       responses:
         200:
           description: Transaction details
@@ -100,6 +110,9 @@ definitions:
       id:
         type: string
         description: Identifiant unique de la transaction
+      month:
+        type: string
+        description: The month of the transaction
       date:
         type: string
         format: date
